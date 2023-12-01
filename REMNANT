@@ -67,13 +67,6 @@ Buildings
 		on tick:yield 5 Views
 		req:TV
 
-	*Crabber
-		name:Clappin' Crab
-		desc:A crab that claps for views. Nothing more. <//><b>Effect:</b><.>Starts generating a base amount of 20 Views every second.
-		cost:750 Views
-		on tick:yield 20 Views
-		req:CrabClap
-
 Upgrades
 
 	*beginning
@@ -138,12 +131,6 @@ Upgrades
 		cost:100 PS
 		req:(PinepizzaService>=17)
 
-	*CrabClap
-		name:Crab Rave
-		desc:A rave of crabs, just for you. This may cost a lot, but think about what a real rave costs. <//><b>Effect:</b><.>Unlocks the Clappin' Crab building.
-		cost:250000000 Views
-		req:LettemLoose
-
 Achievements
 
 			//unlock achievements
@@ -163,20 +150,10 @@ Achievements
 		desc:Watch some VHS tapes that you found on your dad's desk.
 		req:TV
 
-	*BoxGET
-		name:Pineapple Sky
-		desc:The Pinapples are everywhere! You must collect them all!
-		req:LettemLoose
-
 	*JParty
 		name:Lights off, neON!
 		desc:Acquire all 3 light-based Joker's gun upgrades.
 		req:JokeUP1, JokeUP2, JokeUP3
-
-	*AnimalRaveGET
-		name:Obama is gone
-		desc:Get some crabs to do some raving.
-		req:CrabClap
 
 			//resource achievements
 
@@ -277,11 +254,6 @@ Achievements
 		name:DUN DUN
 		desc:Play 10 of your dad's old tapes at once.
 		req:(TClap>=10)
-
-	*CrabClapACH1
-		name:*CLAP CLAP*
-		desc:Get 1 Clappin' Crab to start raving.
-		req:(CrabClap>=1)
 
 	*XORACH
 		name:THE END OF THE PAST
