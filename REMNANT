@@ -22,7 +22,7 @@ Buttons
 	*Mention
 		class:bigButton
 		name:Upvote
-		desc:Click this button to advertise THE CHAIN on reddit.
+		desc:Click this button to advertise THE CHAIN on Reddit.
 		on click:yield 1 View
        
 Resources
@@ -40,11 +40,11 @@ Buildings
 
 	*TempoImprovement
 		name:Beatfix
-	   	desc:An edit that will satisfyingly align and mix the video to improve the tempo and grab more viewers. <//><b>Effect:</b><.> Starts generating a base amount of 3 Views every 4 seconds.
+	   	desc:An edit that will satisfyingly align and mix the video to improve the tempo and grab more viewers. <//><b>Effect:</b><.> Starts generating a base amount of 1 View every 2 seconds.
 		icon:https://imgur.com/gallery/FOhXKGC
 		cost:45 Views
 		req:beginning
-		on tick:yield 0.75 Views
+		on tick:yield 0.5 Views
 
 	*PinepizzaService
 		name:PPDS
@@ -138,16 +138,10 @@ Upgrades
 		cost:100 PS
 		req:(PinepizzaService>=17)
 
-	*LettemLoose
-		name:Warehouse of Blue Blocks
-		desc:These flying blocks are rumored to have pineapple slices inside.
-		cost:5000 PS
-		req:Pinepizza
-
 	*CrabClap
 		name:Crab Rave
 		desc:A rave of crabs, just for you. This may cost a lot, but think about what a real rave costs. <//><b>Effect:</b><.>Unlocks the Clappin' Crab building.
-		cost:250000000
+		cost:250000000 Views
 		req:LettemLoose
 
 Achievements
@@ -165,7 +159,7 @@ Achievements
 		req:(PinepizzaService>=1)
 
 	*TVGET
-		name:This is some serious catchy music.
+		name:This is some seriously catchy music.
 		desc:Watch some VHS tapes that you found on your dad's desk.
 		req:TV
 
@@ -231,7 +225,7 @@ Achievements
 		desc:Get 10000 Views.
 		req:10000 Views:earned
 
-	*ViewsACH9
+	*ViewsACH10
 		name:#Tuber
 		desc:Get 50000 Views.
 		req:50000 Views:earned
@@ -269,7 +263,6 @@ Achievements
 		req:(Joke>=50)
 
 	*JokeACH3.19
-
 		name:You had to do it, didn't you?
 		desc:Recruit exactly 69 of Joker's guns.
 		req:(Joke=69)
@@ -289,3 +282,8 @@ Achievements
 		name:*CLAP CLAP*
 		desc:Get 1 Clappin' Crab to start raving.
 		req:(CrabClap>=1)
+
+	*XORACH
+		name:THE END OF THE PAST
+		desc:I FIGURE YOU'VE SEEN ENOUGH - 11-05-0b-03-00-1c-15-0a-04-1f IS KEY SEVEN - USE KEY FIVE TO UNLOCK IT
+		req:Pinepizza
