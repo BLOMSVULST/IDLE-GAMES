@@ -1,0 +1,291 @@
+Let's make a game!
+    name:Sweet Memes Idle
+    by:SDK team
+    desc:You make a meme. It blows up. Improve it.
+    created:5/21/2019
+    updated:5/30/2019
+    version:00182
+ 
+Settings
+
+    building cost increase:111.5%
+    building cost refund:25%
+    spritesheet:icons, 6 by 4, Downloadsplanks-Spritesheet.png
+    stylesheet:stuff/bigBlue.css
+ 
+Layout
+
+    use default
+
+Buttons
+
+	*Mention
+		class:bigButton
+		name:Upvote
+		desc:Click this button to advertise THE CHAIN on reddit.
+		on click:yield 1 View
+       
+Resources
+
+	*View|Views
+		name:View|Views
+    	desc:The amount of views you have on THE CHAIN right now.
+
+	*P|PS
+		name:Pineapple slice|Pineapple slices
+		desc:Pineapple slices for pineapple pizza-based upgrades. Why.
+		req:PinepizzaService
+
+Buildings
+
+	*TempoImprovement
+		name:Beatfix
+	   	desc:An edit that will satisfyingly align and mix the video to improve the tempo and grab more viewers. <//><b>Effect:</b><.> Starts generating a base amount of 3 Views every 4 seconds.
+		icon:https://imgur.com/gallery/FOhXKGC
+		cost:45 Views
+		req:beginning
+		on tick:yield 0.75 Views
+
+	*PinepizzaService
+		name:PPDS
+		desc:"PPDS" stands for Pinapple Pizza Delivery Service. Delivers free pineapple pizza to anybody who subscribes to your channel, whether they like it or not. We had to get this after the pineapple pizza recipe. <//><b>Effect:</b><.> Starts generating a base amount of 1 Pineapple slice every 4 seconds.
+		cost:120 Views
+		req:Pinepizza
+		on tick:yield 0.25 PS
+
+	*Joke
+		name:Joker's gun
+		desc:An edit that will add Joker and his gun from Persona 5. <//><b>Effect:</b><.>Starts generating a base amount of 1 View every second.
+		cost:75 Views
+		on tick:yield 1 View
+		req:(TempoImprovement>=3)
+
+	*TClap
+		name:Tainted love clap
+		desc:A classic sound effect to keep the beat. <//><b>Effect:</b><.>Starts generating a base amount of 5 Views every second.
+		cost:200 Views
+		on tick:yield 5 Views
+		req:TV
+
+	*Crabber
+		name:Clappin' Crab
+		desc:A crab that claps for views. Nothing more. <//><b>Effect:</b><.>Starts generating a base amount of 20 Views every second.
+		cost:750 Views
+		on tick:yield 20 Views
+		req:CrabClap
+
+Upgrades
+
+	*beginning
+		name:Meme
+		desc:Make a meme out of Sweet Dreams by Eurythmics by dual-mixing it with Kahoot music. THE CHAIN has begun. <//><b>Effect:</b><.>Multiplies click power of Mention by 150%.
+		passive:multiply yield of Mention by 1.5
+		cost:15 Views
+		req:ViewsACH3
+
+	*Discord
+		name:Discord server
+		desc:Make a discord server about your meme, the first move to make. <//><b>Effect:</b><.>Multiplies click power of Mention by 4.<.>Unlocks the "Complementary Pineapple Pizza" upgrade.
+		passive:multiply yield of Mention by 4
+		cost:64 Views
+		req:10 Mention:clicks, beginning
+
+	*JokeUP1
+		name:Louder gunshots
+		desc:You'd think these would be louder, but they're muted by the backbeat of Sweet Dreams and the Kahoot music. Turn it up! <//><b>Effect:</b><.>Increases efficiency of Joker's guns by 75%.
+		passive:multiply yield of Joke by 1.75
+		cost:3200 Views
+		req:(Joke>=10), TV
+
+	*JokeUP2
+		name:Flashlights
+		desc:Attach the brightest flashlights we can make to the guns to attract attention to them. <//><b>Effect:</b><.>Increases efficiency of Joker's guns by 25%.
+		passive:multiply yield of Joke by 1.25
+		cost:100000 Views
+		req:JokeUP1, (Joke>=24)
+
+	*JokeUP3
+		name:Neon metal
+		desc:With the powers of editing, we can now make Joker's guns glow! <//><b>Effect:</b><.>Increases efficiency of Joker's guns by 50%.
+		passive:multiply yield of Joke by 1.50
+		cost:420000 Views
+		req:JokeUP2, (Joke>=30)
+
+	*JokeUP4
+		name:Tone-down
+		desc:People were complaining about Joker's radiance, so we have to turn down the radiance. <//><b>Effect:</b><.>Multiplies power of Joker's guns by 2.
+		passive:multiply yield of Joke by 2
+		cost:1337000 Views
+		req:JokeUP3, (Joke>=45)
+
+	*TV
+		name:Old TV shows
+		desc:Watch some old TV shows that your dad kept on his desk in VHS form. <//><b>Effect:</b><.>Unlocks the "Tainted love clap" building.
+		cost:1000 Views, 350 PS
+		req:(PinepizzaService>=3)
+
+	*Pinepizza
+		name:Complementary Pineapple Pizza
+		desc:Some people consider your meme to be hell, so you add this into THE CHAIN. <//><b>Effect:</b><.>Multiplies click power of Mention by 4.<.>Unlocks the "PPDS" building.
+		passive:multiply yield of Mention by 1.5
+		cost:400 Views
+		req:Discord
+
+	*Pineschool
+		name:Pineapple University
+		desc:Make a college so people can become pineapple experts and make more pineapples. <//><b>Effect:</b><.>Increase production of all pineapple-making buildings by 1%.
+		passive:multiply yield of PinepizzaService by 1.01
+		cost:100 PS
+		req:(PinepizzaService>=17)
+
+	*LettemLoose
+		name:Warehouse of Blue Blocks
+		desc:These flying blocks are rumored to have pineapple slices inside.
+		cost:5000 PS
+		req:Pinepizza
+
+	*CrabClap
+		name:Crab Rave
+		desc:A rave of crabs, just for you. This may cost a lot, but think about what a real rave costs. <//><b>Effect:</b><.>Unlocks the Clappin' Crab building.
+		cost:250000000
+		req:LettemLoose
+
+Achievements
+
+			//unlock achievements
+
+	*THECHAINBEGINS
+		name:THE CHAIN begins...
+		desc:Create a great meme.
+		req:beginning
+
+	*PineappleGET
+		name:Pineapple Time
+		desc:Aqcuire the best recipe.
+		req:(PinepizzaService>=1)
+
+	*TVGET
+		name:This is some serious catchy music.
+		desc:Watch some VHS tapes that you found on your dad's desk.
+		req:TV
+
+	*BoxGET
+		name:Pineapple Sky
+		desc:The Pinapples are everywhere! You must collect them all!
+		req:LettemLoose
+
+	*JParty
+		name:Lights off, neON!
+		desc:Acquire all 3 light-based Joker's gun upgrades.
+		req:JokeUP1, JokeUP2, JokeUP3
+
+	*AnimalRaveGET
+		name:Obama is gone
+		desc:Get some crabs to do some raving.
+		req:CrabClap
+
+			//resource achievements
+
+	*ViewsACH1
+		name:Wow, I'm famous!
+		desc:Get 1 View.
+		req:1 View:earned
+
+	*ViewsACH2
+		name:TikTokTuber
+		desc:Get 5 Views.
+		req:5 Views:earned
+
+	*ViewsACH3
+		name:Actual beginning
+		desc:Get 10 Views.
+		req:10 Views:earned
+
+	*ViewsACH4
+		name:Getting "somewhere"
+		desc:Get 25 Views.
+		req:25 Views:earned
+
+	*ViewsACH5
+		name:Halfway there...
+		desc:Get 50 Views.
+		req:50 Views:earned
+
+	*ViewsACH6
+		name:Oh boy, I'm actually popular!
+		desc:Get 100 Views.
+		req:100 Views:earned
+
+	*ViewsACH7
+		name:MicroTuber
+		desc:Get 1000 Views.
+		req:1000 Views:earned
+
+	*ViewsACH8
+		name:Fresh start
+		desc:Get 5000 Views.
+		req:5000 Views:earned
+
+	*ViewsACH9
+		name:MiniTuber
+		desc:Get 10000 Views.
+		req:10000 Views:earned
+
+	*ViewsACH9
+		name:#Tuber
+		desc:Get 50000 Views.
+		req:50000 Views:earned
+
+			//building achievements
+
+	*BeatACH1
+		name:Sounds better already!
+		desc:Fix the beat 1 time.
+		req:(TempoImprovement>=1)
+
+	*BeatACH2
+		name:Perfectly Synced
+		desc:Fix the beat 10 times.
+		req:(TempoImprovement>=5)
+
+	*BeatACH3
+		name:Choinkus would be proud
+		desc:Fix the beat 50 times.
+		req:(TempoImprovement>=50)
+
+	*JokeACH1
+		name:BANG!
+		desc:Recruit 1 of Joker's guns.
+		req:(Joke>=1)
+
+	*JokeACH2
+		name:My ears...
+		desc:Recruit 10 of Joker's guns.
+		req:(Joke>=10)
+
+	*JokeACH3
+		name:Nerf war
+		desc:Recruit 50 of Joker's guns.
+		req:(Joke>=50)
+
+	*JokeACH3.19
+
+		name:You had to do it, didn't you?
+		desc:Recruit exactly 69 of Joker's guns.
+		req:(Joke=69)
+
+
+	*TClapACH1
+		name:This sounds like law and order, hmm...
+		desc:Play 1 of your dad's old tapes.
+		req:(TClap>=1)
+
+	*TClapACH2
+		name:DUN DUN
+		desc:Play 10 of your dad's old tapes at once.
+		req:(TClap>=10)
+
+	*CrabClapACH1
+		name:*CLAP CLAP*
+		desc:Get 1 Clappin' Crab to start raving.
+		req:(CrabClap>=1)
